@@ -83,7 +83,9 @@ class ICCImage {
             true
           );
           console.log("proof data: ", data);
-          ctx.putImageData(data, 0, 0);
+          var newImageData = ctx.createImageData(image.width, image.height);
+          newImageData.data.set(data);
+          ctx.putImageData(newImageData, 0, 0);
         }
       };
     });
