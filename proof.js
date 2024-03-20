@@ -80,7 +80,9 @@ class ICCImage {
             imageData.data,
             true,
             true,
-            true
+            true,
+            image.width * image.height,
+            "int8"
           );
           console.log("proof data: ", data);
           var newImageData = ctx.createImageData(image.width, image.height);
