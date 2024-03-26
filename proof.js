@@ -45,7 +45,10 @@ class ICCImage {
     CMYKprofile.load(this.outputProfile, (profile) => {
       console.log("loaded: ", profile);
       var proofTransform = new jsColorEngine.Transform({
-        buildLUT: true,
+        builtLut: true,
+        verbose: true,
+        verboseTiming: true,
+        pipelineDebug: true,
         dataFormat: "int8",
         BPC: [true, false], // Enable blackpoint compensation on preceptional intent but not relative
       });
